@@ -13,7 +13,7 @@ const schema = Joi.object({
     email: Joi.string().email().required()
 })
 
-mongoose.connect("mongodb://localhost:27017/users")
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => { console.log("Connected to MongoDB Users") })
     .catch((err) => {console.log("Connection Failed!")})
 
